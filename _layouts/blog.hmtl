@@ -1,0 +1,22 @@
+---
+layout: page
+---
+      <div class="section">
+        <div class="w-container">
+          <div class="section-title-group">
+            <h2 class="section-heading centered">Blog Posts</h2>
+          </div>
+  
+          {% for post in site.posts%}
+            <div class="w-col w-col-6">
+              <div class="w-row">
+                <div class="w-col w-col-4"><img src="{{ post.image | prepend: '/assets/documents/' | prepend: site.baseurl | prepend: site.url }}" width="100" alt="" class="grid-image"></div>
+                <div class="w-col w-col-8">
+                    <a href="{{ site.url | append: site.baseurl | append: post.url }}" title="Read {{ post.title }}"><h3>{{ post.title }}</h3></a>
+                  {{ post.excerpt }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
